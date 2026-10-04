@@ -1,0 +1,384 @@
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+
+      background: #ffffff;
+
+      color: #111111;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    }
+
+
+    /* =====================================================
+       MAIN PAPER
+    ===================================================== */
+
+    .todo-paper {
+      width: 100%;
+      max-width: 920px;
+
+      min-height: 1250px;
+
+      padding: 48px 54px 42px;
+
+      border: 1px solid #222;
+
+      border-radius: 18px;
+
+      background: #fff;
+    }
+
+
+    /* =====================================================
+       TITLE
+    ===================================================== */
+
+    .title {
+      text-align: center;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(45px, 7vw, 72px);
+
+      font-weight: 400;
+
+      letter-spacing: 7px;
+
+      line-height: 1;
+
+      margin-bottom: 45px;
+    }
+
+
+    /* =====================================================
+       MONTH / DATE
+    ===================================================== */
+
+    .details {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+
+      margin-bottom: 45px;
+
+      padding: 0 25px;
+    }
+
+    .detail {
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+    }
+
+    .detail label {
+      flex-shrink: 0;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+    }
+
+    .detail-line {
+      flex: 1;
+
+      height: 1px;
+
+      border-bottom:
+        1px dotted #555;
+    }
+
+
+    /* =====================================================
+       MAIN GRID
+    ===================================================== */
+
+    .main-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 55px;
+    }
+
+
+    /* =====================================================
+       SECTION
+    ===================================================== */
+
+    .section-title {
+      height: 38px;
+
+      display: flex;
+
+      align-items: center;
+
+      padding: 0 18px;
+
+      margin-bottom: 18px;
+
+      border: 1px solid #222;
+
+      border-radius: 22px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* =====================================================
+       CHECKLIST
+    ===================================================== */
+
+    .checklist {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 7px;
+
+      padding: 0 18px;
+    }
+
+    .task {
+      display: grid;
+
+      grid-template-columns: 18px 1fr;
+
+      align-items: center;
+
+      column-gap: 10px;
+
+      min-height: 25px;
+    }
+
+    .task input {
+      appearance: none;
+
+      width: 14px;
+      height: 14px;
+
+      border: 1px solid #777;
+
+      background: #fff;
+
+      cursor: pointer;
+
+      position: relative;
+    }
+
+    .task input:checked::after {
+      content: "✓";
+
+      position: absolute;
+
+      left: 2px;
+      top: -3px;
+
+      font-size: 13px;
+
+      font-weight: bold;
+    }
+
+    .task-line {
+      width: 100%;
+
+      height: 17px;
+
+      border-bottom:
+        1px dotted #777;
+    }
+
+
+    /* =====================================================
+       RIGHT COLUMN
+    ===================================================== */
+
+    .right-column {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 24px;
+    }
+
+
+    /* =====================================================
+       NOTES / REMINDER
+    ===================================================== */
+
+    .writing-box {
+      width: 100%;
+
+      height: 225px;
+
+      padding: 17px 18px;
+
+      border: 1px solid #333;
+
+      border-radius: 18px;
+    }
+
+    .writing-box h3 {
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 18px;
+    }
+
+    .writing-lines {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 17px;
+    }
+
+    .writing-lines span {
+      display: block;
+
+      height: 1px;
+
+      border-bottom:
+        1px dotted #ddd;
+    }
+
+
+    /* =====================================================
+       REMINDER BOX
+    ===================================================== */
+
+    .reminder {
+      height: 225px;
+    }
+
+
+    /* =====================================================
+       RIGHT CHECKLIST
+    ===================================================== */
+
+    .priority-list {
+      padding-bottom: 0;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+      body {
+        align-items: flex-start;
+
+        padding: 12px;
+      }
+
+      .todo-paper {
+        min-height: auto;
+
+        padding:
+          35px 25px;
+      }
+
+      .title {
+        font-size: 42px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 35px;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 0;
+
+        margin-bottom: 35px;
+      }
+
+      .main-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .right-column {
+        gap: 25px;
+      }
+
+      .writing-box {
+        height: 190px;
+      }
+    }
+
+
+    @media (max-width: 430px) {
+
+      .todo-paper {
+        padding:
+          30px 17px;
+
+        border-radius: 13px;
+      }
+
+      .title {
+        font-size: 34px;
+
+        letter-spacing: 3px;
+      }
+
+      .section-title {
+        font-size: 10px;
+
+        height: 35px;
+      }
+
+      .checklist {
+        padding: 0 8px;
+      }
+
+      .details {
+        font-size: 10px;
+      }
+    }
