@@ -1,0 +1,436 @@
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #0c0618 0%,
+          #050308 45%,
+          #020204 100%
+        );
+
+      overflow: hidden;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    }
+
+
+    /* =====================================================
+       CLOCK
+    ===================================================== */
+
+    .clock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 16px;
+
+      padding: 40px;
+    }
+
+
+    /* =====================================================
+       DIGIT
+    ===================================================== */
+
+    .digit {
+      position: relative;
+
+      width: 75px;
+      height: 130px;
+    }
+
+
+    /* =====================================================
+       SEVEN-SEGMENT SYSTEM
+
+       Each digit contains:
+
+       a = top
+       b = upper-right
+       c = lower-right
+       d = bottom
+       e = lower-left
+       f = upper-left
+       g = middle
+    ===================================================== */
+
+    .segment {
+      position: absolute;
+
+      background: #9b55ff;
+
+      filter:
+        drop-shadow(0 0 4px #8d3cff)
+        drop-shadow(0 0 10px #7625ff)
+        drop-shadow(0 0 20px rgba(125, 42, 255, .75));
+
+      opacity: .95;
+
+      transition: .3s ease;
+    }
+
+
+    /* =====================================================
+       HORIZONTAL SEGMENTS
+    ===================================================== */
+
+    .a,
+    .d,
+    .g {
+      width: 52px;
+      height: 12px;
+
+      left: 11px;
+
+      clip-path: polygon(
+        8% 0,
+        92% 0,
+        100% 50%,
+        92% 100%,
+        8% 100%,
+        0 50%
+      );
+    }
+
+    .a {
+      top: 0;
+    }
+
+    .g {
+      top: 59px;
+    }
+
+    .d {
+      bottom: 0;
+    }
+
+
+    /* =====================================================
+       VERTICAL SEGMENTS
+    ===================================================== */
+
+    .b,
+    .c,
+    .e,
+    .f {
+      width: 12px;
+      height: 52px;
+
+      clip-path: polygon(
+        50% 0,
+        100% 8%,
+        100% 92%,
+        50% 100%,
+        0 92%,
+        0 8%
+      );
+    }
+
+    .f {
+      left: 0;
+      top: 7px;
+    }
+
+    .b {
+      right: 0;
+      top: 7px;
+    }
+
+    .e {
+      left: 0;
+      bottom: 7px;
+    }
+
+    .c {
+      right: 0;
+      bottom: 7px;
+    }
+
+
+    /* =====================================================
+       DIM / DISABLED SEGMENTS
+    ===================================================== */
+
+    .off {
+      opacity: 0.035;
+
+      filter: none;
+    }
+
+
+    /* =====================================================
+       COLON
+    ===================================================== */
+
+    .colon {
+      width: 18px;
+      height: 130px;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 28px;
+    }
+
+    .colon span {
+      width: 13px;
+      height: 13px;
+
+      border-radius: 3px;
+
+      background: #a45cff;
+
+      box-shadow:
+        0 0 5px #913cff,
+        0 0 12px #7c2cff,
+        0 0 25px rgba(126, 43, 255, .8);
+    }
+
+
+    /* =====================================================
+       DIGIT DEFINITIONS
+    ===================================================== */
+
+    /* -----------------------------------------------------
+       ZERO
+    ----------------------------------------------------- */
+
+    .zero .g {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       ONE
+    ----------------------------------------------------- */
+
+    .one .a,
+    .one .f,
+    .one .g,
+    .one .e,
+    .one .d {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       TWO
+    ----------------------------------------------------- */
+
+    .two .b,
+    .two .e {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       THREE
+    ----------------------------------------------------- */
+
+    .three .f,
+    .three .e {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       FOUR
+    ----------------------------------------------------- */
+
+    .four .a,
+    .four .d,
+    .four .e {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       FIVE
+    ----------------------------------------------------- */
+
+    .five .b,
+    .five .e {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       SIX
+    ----------------------------------------------------- */
+
+    .six .b {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       SEVEN
+    ----------------------------------------------------- */
+
+    .seven .f,
+    .seven .g,
+    .seven .e,
+    .seven .d {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* -----------------------------------------------------
+       EIGHT
+    ----------------------------------------------------- */
+
+    /* All segments active */
+
+
+    /* -----------------------------------------------------
+       NINE
+    ----------------------------------------------------- */
+
+    .nine .e {
+      opacity: 0.035;
+      filter: none;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .clock {
+        gap: 9px;
+        padding: 20px;
+      }
+
+      .digit {
+        width: 52px;
+        height: 90px;
+      }
+
+      .a,
+      .d,
+      .g {
+        width: 37px;
+        height: 9px;
+        left: 7px;
+      }
+
+      .g {
+        top: 40px;
+      }
+
+      .b,
+      .c,
+      .e,
+      .f {
+        width: 9px;
+        height: 36px;
+      }
+
+      .f {
+        top: 5px;
+      }
+
+      .b {
+        top: 5px;
+      }
+
+      .e {
+        bottom: 5px;
+      }
+
+      .c {
+        bottom: 5px;
+      }
+
+      .colon {
+        width: 12px;
+        height: 90px;
+        gap: 20px;
+      }
+
+      .colon span {
+        width: 9px;
+        height: 9px;
+      }
+    }
+
+
+    @media (max-width: 430px) {
+
+      .clock {
+        gap: 5px;
+      }
+
+      .digit {
+        width: 43px;
+        height: 75px;
+      }
+
+      .a,
+      .d,
+      .g {
+        width: 30px;
+        height: 7px;
+        left: 6px;
+      }
+
+      .g {
+        top: 34px;
+      }
+
+      .b,
+      .c,
+      .e,
+      .f {
+        width: 7px;
+        height: 30px;
+      }
+
+      .colon {
+        width: 9px;
+        height: 75px;
+        gap: 16px;
+      }
+
+      .colon span {
+        width: 7px;
+        height: 7px;
+      }
+    }
