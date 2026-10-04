@@ -1,0 +1,777 @@
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: #010306;
+
+      color: #ffffff;
+    }
+
+
+    /* =========================================================
+       MAIN BACKGROUND
+    ========================================================= */
+
+    .scene {
+      position: relative;
+
+      width: 100%;
+      min-height: 100vh;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 75%,
+          rgba(0, 82, 160, 0.30),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 20% 50%,
+          rgba(0, 30, 70, 0.35),
+          transparent 45%
+        ),
+        #010306;
+    }
+
+
+    /* =========================================================
+       BLUE LIGHT GLOW
+    ========================================================= */
+
+    .scene::before {
+      content: "";
+
+      position: absolute;
+
+      width: 650px;
+      height: 650px;
+
+      left: 50%;
+      bottom: -400px;
+
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0, 117, 255, 0.55),
+          rgba(0, 66, 150, 0.20) 35%,
+          transparent 70%
+        );
+
+      filter: blur(35px);
+
+      opacity: .8;
+    }
+
+
+    /* =========================================================
+       LIGHT RAYS
+    ========================================================= */
+
+    .rays {
+      position: absolute;
+
+      inset: 0;
+
+      overflow: hidden;
+
+      transform-origin: center bottom;
+    }
+
+
+    .ray {
+      position: absolute;
+
+      left: 50%;
+      bottom: -130px;
+
+      width: 8px;
+      height: 850px;
+
+      transform-origin: bottom center;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 115, 255, .95),
+          rgba(0, 89, 205, .75) 35%,
+          rgba(0, 30, 80, .05) 90%
+        );
+
+      filter:
+        blur(.5px)
+        drop-shadow(0 0 8px rgba(0, 110, 255, .65));
+
+      opacity: .8;
+    }
+
+    .ray:nth-child(1) {
+      transform: rotate(-76deg);
+      width: 7px;
+    }
+
+    .ray:nth-child(2) {
+      transform: rotate(-65deg);
+      width: 15px;
+      opacity: .45;
+    }
+
+    .ray:nth-child(3) {
+      transform: rotate(-54deg);
+      width: 5px;
+    }
+
+    .ray:nth-child(4) {
+      transform: rotate(-45deg);
+      width: 18px;
+      opacity: .38;
+    }
+
+    .ray:nth-child(5) {
+      transform: rotate(-34deg);
+      width: 6px;
+    }
+
+    .ray:nth-child(6) {
+      transform: rotate(-24deg);
+      width: 12px;
+      opacity: .55;
+    }
+
+    .ray:nth-child(7) {
+      transform: rotate(-13deg);
+      width: 4px;
+    }
+
+    .ray:nth-child(8) {
+      transform: rotate(0deg);
+      width: 7px;
+      opacity: .75;
+    }
+
+    .ray:nth-child(9) {
+      transform: rotate(13deg);
+      width: 4px;
+    }
+
+    .ray:nth-child(10) {
+      transform: rotate(24deg);
+      width: 12px;
+      opacity: .55;
+    }
+
+    .ray:nth-child(11) {
+      transform: rotate(34deg);
+      width: 6px;
+    }
+
+    .ray:nth-child(12) {
+      transform: rotate(45deg);
+      width: 18px;
+      opacity: .38;
+    }
+
+    .ray:nth-child(13) {
+      transform: rotate(54deg);
+      width: 5px;
+    }
+
+    .ray:nth-child(14) {
+      transform: rotate(65deg);
+      width: 15px;
+      opacity: .45;
+    }
+
+    .ray:nth-child(15) {
+      transform: rotate(76deg);
+      width: 7px;
+    }
+
+
+    /* =========================================================
+       HORIZONTAL / DIAGONAL LIGHT STREAKS
+    ========================================================= */
+
+    .streak {
+      position: absolute;
+
+      height: 3px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #006cff,
+          #40b9ff,
+          #006cff,
+          transparent
+        );
+
+      box-shadow:
+        0 0 8px #0078ff,
+        0 0 20px rgba(0, 110, 255, .7);
+
+      opacity: .75;
+    }
+
+    .streak.one {
+      width: 480px;
+
+      left: -100px;
+      top: 57%;
+
+      transform: rotate(16deg);
+    }
+
+    .streak.two {
+      width: 600px;
+
+      right: -120px;
+      top: 59%;
+
+      transform: rotate(-18deg);
+    }
+
+    .streak.three {
+      width: 420px;
+
+      left: -80px;
+      top: 65%;
+
+      transform: rotate(11deg);
+
+      opacity: .45;
+    }
+
+    .streak.four {
+      width: 500px;
+
+      right: -80px;
+      top: 69%;
+
+      transform: rotate(-14deg);
+
+      opacity: .4;
+    }
+
+
+    /* =========================================================
+       LOGIN WRAPPER
+    ========================================================= */
+
+    .login-wrapper {
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 390px;
+      max-width: 90vw;
+
+      z-index: 10;
+    }
+
+
+    /* =========================================================
+       ANGULAR GLASS PANEL
+    ========================================================= */
+
+    .login-panel {
+      position: relative;
+
+      min-height: 570px;
+
+      padding:
+        78px
+        60px
+        65px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 22, 29, .75),
+          rgba(4, 10, 17, .66)
+        );
+
+      backdrop-filter: blur(15px);
+
+      -webkit-backdrop-filter: blur(15px);
+
+      clip-path: polygon(
+        7% 0,
+        78% 0,
+        100% 15%,
+        100% 84%,
+        89% 100%,
+        25% 100%,
+        0 86%,
+        0 10%
+      );
+
+      border: 1px solid rgba(255, 255, 255, .18);
+
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, .65),
+        inset 0 0 50px rgba(0, 100, 255, .05);
+    }
+
+
+    /* =========================================================
+       PANEL BORDER EFFECT
+    ========================================================= */
+
+    .login-panel::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      clip-path: polygon(
+        7% 0,
+        78% 0,
+        100% 15%,
+        100% 84%,
+        89% 100%,
+        25% 100%,
+        0 86%,
+        0 10%
+      );
+
+      border: 1px solid rgba(255,255,255,.25);
+
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       PANEL BLUE LIGHT
+    ========================================================= */
+
+    .login-panel::after {
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 100px;
+
+      left: -40px;
+      top: 240px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 116, 255, .25),
+          rgba(45, 171, 255, .55),
+          rgba(0, 89, 255, .15),
+          transparent
+        );
+
+      filter: blur(18px);
+
+      transform: rotate(-20deg);
+
+      pointer-events: none;
+    }
+
+
+    /* =========================================================
+       CONTENT
+    ========================================================= */
+
+    .login-content {
+      position: relative;
+
+      z-index: 5;
+    }
+
+
+    /* =========================================================
+       HEADING
+    ========================================================= */
+
+    .login-title {
+      font-size: 25px;
+
+      font-weight: 700;
+
+      letter-spacing: -1px;
+
+      margin-bottom: 5px;
+    }
+
+    .login-description {
+      color: rgba(255,255,255,.55);
+
+      font-size: 6px;
+
+      line-height: 1.6;
+
+      max-width: 235px;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* =========================================================
+       OPTION BUTTONS
+    ========================================================= */
+
+    .options {
+      display: flex;
+
+      gap: 10px;
+
+      margin-bottom: 25px;
+    }
+
+    .option {
+      height: 29px;
+
+      padding: 0 15px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 7px;
+
+      color: #ffffff;
+
+      font-size: 8px;
+
+      border: 1px solid rgba(255,255,255,.45);
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.025);
+
+      cursor: pointer;
+
+      transition:
+        .25s ease;
+    }
+
+    .option:hover {
+      background: rgba(0, 112, 255, .18);
+
+      border-color: #168cff;
+
+      box-shadow:
+        0 0 15px rgba(0, 105, 255, .2);
+    }
+
+
+    /* OPTION ICON */
+
+    .option-icon {
+      width: 11px;
+      height: 11px;
+
+      position: relative;
+
+      display: inline-block;
+    }
+
+    .option-icon::before,
+    .option-icon::after {
+      content: "";
+
+      position: absolute;
+
+      width: 5px;
+      height: 5px;
+
+      border: 1px solid #ffffff;
+
+      border-radius: 2px;
+    }
+
+    .option-icon::before {
+      left: 0;
+      top: 3px;
+    }
+
+    .option-icon::after {
+      right: 0;
+      top: 3px;
+    }
+
+
+    /* =========================================================
+       SEPARATOR
+    ========================================================= */
+
+    .separator {
+      width: 100%;
+
+      height: 1px;
+
+      margin-bottom: 20px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.2),
+          rgba(255,255,255,.04)
+        );
+    }
+
+
+    /* =========================================================
+       INPUT GROUP
+    ========================================================= */
+
+    .input-group {
+      margin-bottom: 12px;
+    }
+
+    .input-group label {
+      display: block;
+
+      color: #ffffff;
+
+      font-size: 7px;
+
+      font-weight: 600;
+
+      margin-bottom: 4px;
+    }
+
+    .input-group input {
+      width: 100%;
+
+      height: 25px;
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      outline: none;
+
+      border-radius: 999px;
+
+      padding:
+        0 13px;
+
+      color: #ffffff;
+
+      font-size: 7px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.18)
+        );
+
+      box-shadow:
+        inset 0 1px 3px rgba(0,0,0,.25);
+
+      transition: .25s ease;
+    }
+
+    .input-group input::placeholder {
+      color: rgba(255,255,255,.25);
+    }
+
+    .input-group input:focus {
+      border-color: rgba(0, 125, 255, .8);
+
+      box-shadow:
+        0 0 12px rgba(0, 106, 255, .2);
+    }
+
+
+    /* =========================================================
+       PASSWORD ICON
+    ========================================================= */
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper::after {
+      content: "◉";
+
+      position: absolute;
+
+      right: 11px;
+      bottom: 7px;
+
+      color: rgba(255,255,255,.28);
+
+      font-size: 7px;
+    }
+
+
+    /* =========================================================
+       LOGIN BUTTON
+    ========================================================= */
+
+    .login-button {
+      width: 100%;
+
+      height: 29px;
+
+      margin-top: 9px;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #f2f2f2
+        );
+
+      color: #444;
+
+      font-size: 8px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+
+      transition:
+        .25s ease;
+    }
+
+    .login-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 10px 30px rgba(0, 100, 255, .25);
+    }
+
+    .login-button:active {
+      transform: scale(.98);
+    }
+
+
+    /* =========================================================
+       DECORATIVE CORNER LINES
+    ========================================================= */
+
+    .corner {
+      position: absolute;
+
+      z-index: 20;
+
+      pointer-events: none;
+
+      border: 1px solid rgba(130, 190, 255, .35);
+    }
+
+    .corner.one {
+      width: 22px;
+      height: 60px;
+
+      left: -12px;
+      top: 100px;
+
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .corner.two {
+      width: 25px;
+      height: 60px;
+
+      right: -13px;
+      bottom: 105px;
+
+      border-left: none;
+      border-top: none;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 600px) {
+
+      .login-wrapper {
+        width: 350px;
+      }
+
+      .login-panel {
+        min-height: 520px;
+
+        padding:
+          70px
+          55px
+          55px;
+      }
+
+      .login-title {
+        font-size: 23px;
+      }
+
+      .ray {
+        height: 700px;
+      }
+    }
+
+
+    @media (max-width: 420px) {
+
+      .login-wrapper {
+        width: 320px;
+      }
+
+      .login-panel {
+        min-height: 500px;
+
+        padding:
+          68px
+          48px
+          50px;
+      }
+
+      .options {
+        gap: 6px;
+      }
+
+      .option {
+        padding: 0 11px;
+      }
+    }
