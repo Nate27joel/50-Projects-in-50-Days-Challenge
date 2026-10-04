@@ -1,0 +1,886 @@
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: #050709;
+
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: #f4f7fb;
+    }
+
+
+    /* =========================================================
+       APP CONTAINER
+    ========================================================= */
+
+    .app {
+      position: relative;
+
+      width: 100%;
+      max-width: 390px;
+
+      min-height: 820px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #0c1015 0%,
+          #080c10 100%
+        );
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(255,255,255,.06);
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.7);
+    }
+
+
+    /* =========================================================
+       TOP NAVIGATION
+    ========================================================= */
+
+    .topbar {
+      height: 58px;
+
+      padding: 0 16px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr 1fr;
+
+      align-items: center;
+    }
+
+
+    /* HAMBURGER */
+
+    .menu {
+      width: 30px;
+      height: 30px;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+
+      gap: 4px;
+
+      cursor: pointer;
+    }
+
+    .menu span {
+      width: 15px;
+      height: 2px;
+
+      background: #8e99a6;
+
+      border-radius: 10px;
+    }
+
+
+    /* TITLE */
+
+    .brand {
+      text-align: center;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      color: #ffffff;
+    }
+
+
+    /* PROFILE */
+
+    .profile {
+      justify-self: end;
+
+      width: 32px;
+      height: 32px;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      border:
+        2px solid rgba(255,255,255,.12);
+
+      background:
+        linear-gradient(
+          135deg,
+          #6c7785,
+          #202831
+        );
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      color: #fff;
+    }
+
+
+    /* =========================================================
+       MAIN CONTENT
+    ========================================================= */
+
+    .content {
+      padding: 0 16px 90px;
+    }
+
+
+    /* =========================================================
+       WELCOME
+    ========================================================= */
+
+    .welcome {
+      padding-top: 8px;
+      margin-bottom: 18px;
+    }
+
+    .welcome h1 {
+      font-size: 18px;
+
+      line-height: 1.3;
+
+      font-weight: 700;
+
+      letter-spacing: -.4px;
+    }
+
+    .welcome p {
+      margin-top: 5px;
+
+      font-size: 10px;
+
+      color: #78838f;
+    }
+
+
+    /* =========================================================
+       SEARCH BAR
+    ========================================================= */
+
+    .search {
+      width: 100%;
+      height: 40px;
+
+      margin-bottom: 18px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 0 14px;
+
+      gap: 9px;
+
+      border-radius: 12px;
+
+      background: #11171d;
+
+      border:
+        1px solid rgba(255,255,255,.05);
+
+      color: #596571;
+
+      font-size: 11px;
+    }
+
+    .search-icon {
+      width: 13px;
+      height: 13px;
+
+      border:
+        2px solid #64707b;
+
+      border-radius: 50%;
+
+      position: relative;
+    }
+
+    .search-icon::after {
+      content: "";
+
+      position: absolute;
+
+      width: 5px;
+      height: 2px;
+
+      background: #64707b;
+
+      right: -4px;
+      bottom: -2px;
+
+      transform: rotate(45deg);
+    }
+
+
+    /* =========================================================
+       CARD BASE
+    ========================================================= */
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          #11171d,
+          #0c1116
+        );
+
+      border:
+        1px solid rgba(255,255,255,.055);
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 12px 30px rgba(0,0,0,.18);
+    }
+
+
+    /* =========================================================
+       ACTIVITY CARD
+    ========================================================= */
+
+    .activity-card {
+      height: 225px;
+
+      padding: 22px 20px;
+
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: 12px;
+    }
+
+
+    /* =========================================================
+       PROGRESS RING
+    ========================================================= */
+
+    .progress {
+      width: 170px;
+      height: 170px;
+
+      border-radius: 50%;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+        conic-gradient(
+          #2487f5 0deg,
+          #2487f5 205deg,
+          #202932 205deg,
+          #202932 360deg
+        );
+
+      transform: rotate(-42deg);
+
+      box-shadow:
+        0 0 20px rgba(36,135,245,.12);
+    }
+
+
+    /* INNER CIRCLE */
+
+    .progress::before {
+      content: "";
+
+      position: absolute;
+
+      width: 145px;
+      height: 145px;
+
+      border-radius: 50%;
+
+      background: #10161c;
+
+      box-shadow:
+        inset 0 0 20px rgba(0,0,0,.25);
+    }
+
+
+    /* HIDE PART OF RING */
+
+    .progress::after {
+      content: "";
+
+      position: absolute;
+
+      width: 170px;
+      height: 170px;
+
+      border-radius: 50%;
+
+      background:
+        conic-gradient(
+          transparent 0deg,
+          transparent 315deg,
+          #10161c 315deg,
+          #10161c 360deg
+        );
+    }
+
+
+    /* CENTER */
+
+    .progress-content {
+      position: absolute;
+
+      z-index: 3;
+
+      text-align: center;
+
+      transform: rotate(42deg);
+    }
+
+    .fire {
+      font-size: 17px;
+
+      margin-bottom: 3px;
+
+      color: #9da9b5;
+    }
+
+    .calories {
+      font-size: 22px;
+
+      font-weight: 700;
+
+      letter-spacing: .5px;
+    }
+
+    .calories-label {
+      margin-top: 3px;
+
+      font-size: 8px;
+
+      text-transform: uppercase;
+
+      color: #68747f;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =========================================================
+       STATISTICS
+    ========================================================= */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+    }
+
+    .stat-card {
+      min-height: 105px;
+
+      padding: 15px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .stat-title {
+      font-size: 9px;
+
+      color: #788590;
+
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 22px;
+
+      font-weight: 700;
+
+      letter-spacing: -.5px;
+    }
+
+    .stat-unit {
+      font-size: 8px;
+
+      color: #65717c;
+
+      margin-left: 2px;
+    }
+
+    .stat-line {
+      position: absolute;
+
+      left: 15px;
+      right: 15px;
+      bottom: 13px;
+
+      height: 4px;
+
+      background: #202830;
+
+      border-radius: 20px;
+
+      overflow: hidden;
+    }
+
+    .stat-line span {
+      display: block;
+
+      height: 100%;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          90deg,
+          #1676e8,
+          #42a1ff
+        );
+    }
+
+    .stat-card:nth-child(1)
+    .stat-line span {
+      width: 70%;
+    }
+
+    .stat-card:nth-child(2)
+    .stat-line span {
+      width: 45%;
+    }
+
+
+    /* =========================================================
+       SECTION TITLE
+    ========================================================= */
+
+    .section-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 10px;
+    }
+
+    .section-header h2 {
+      font-size: 12px;
+
+      font-weight: 700;
+    }
+
+    .section-header a {
+      font-size: 8px;
+
+      color: #3b91ef;
+
+      text-decoration: none;
+    }
+
+
+    /* =========================================================
+       MEAL CARD
+    ========================================================= */
+
+    .meal-card {
+      height: 95px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 10px;
+
+      margin-bottom: 15px;
+    }
+
+
+    /* FOOD IMAGE */
+
+    .meal-image {
+      width: 75px;
+      height: 75px;
+
+      flex-shrink: 0;
+
+      border-radius: 11px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #79533d,
+          #222c27
+        );
+    }
+
+    /*
+       CSS-created food illustration
+    */
+
+    .meal-image::before {
+      content: "";
+
+      position: absolute;
+
+      width: 47px;
+      height: 30px;
+
+      background:
+        radial-gradient(
+          circle at 30% 35%,
+          #f1a45b 0 13%,
+          transparent 14%
+        ),
+        radial-gradient(
+          circle at 65% 55%,
+          #b85b3a 0 16%,
+          transparent 17%
+        ),
+        #d48c4c;
+
+      border-radius: 50%;
+
+      left: 13px;
+      top: 22px;
+
+      transform: rotate(-8deg);
+
+      box-shadow:
+        0 4px 10px rgba(0,0,0,.3);
+    }
+
+    .meal-image::after {
+      content: "";
+
+      position: absolute;
+
+      width: 30px;
+      height: 9px;
+
+      background: #3e6c3b;
+
+      border-radius: 50%;
+
+      left: 22px;
+      top: 17px;
+
+      transform: rotate(25deg);
+    }
+
+
+    /* MEAL INFO */
+
+    .meal-info {
+      flex: 1;
+    }
+
+    .meal-info h3 {
+      font-size: 11px;
+
+      margin-bottom: 7px;
+
+      font-weight: 600;
+    }
+
+    .meal-info p {
+      font-size: 8px;
+
+      color: #68747e;
+
+      line-height: 1.5;
+    }
+
+    .meal-calories {
+      margin-top: 5px;
+
+      font-size: 10px;
+
+      color: #e8edf2;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       BOTTOM NAVIGATION
+    ========================================================= */
+
+    .bottom-nav {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 72px;
+
+      background:
+        rgba(9,13,17,.96);
+
+      border-top:
+        1px solid rgba(255,255,255,.06);
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      align-items: center;
+
+      padding: 0 15px;
+
+      backdrop-filter: blur(15px);
+    }
+
+    .nav-item {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 5px;
+
+      color: #56616c;
+
+      font-size: 8px;
+
+      text-decoration: none;
+    }
+
+    .nav-icon {
+      width: 18px;
+      height: 18px;
+
+      position: relative;
+
+      opacity: .75;
+    }
+
+
+    /* HOME ICON */
+
+    .home-icon::before {
+      content: "";
+
+      position: absolute;
+
+      width: 11px;
+      height: 11px;
+
+      left: 3px;
+      top: 5px;
+
+      border:
+        1.5px solid currentColor;
+
+      border-top: none;
+    }
+
+    .home-icon::after {
+      content: "";
+
+      position: absolute;
+
+      width: 11px;
+      height: 11px;
+
+      left: 3px;
+      top: 2px;
+
+      border-left:
+        1.5px solid currentColor;
+
+      border-top:
+        1.5px solid currentColor;
+
+      transform: rotate(45deg);
+    }
+
+
+    /* GRAPH ICON */
+
+    .graph-icon {
+      border-bottom:
+        1.5px solid currentColor;
+    }
+
+    .graph-icon::before {
+      content: "";
+
+      position: absolute;
+
+      width: 12px;
+      height: 8px;
+
+      left: 2px;
+      top: 4px;
+
+      border-left: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+
+      transform: skewY(-30deg);
+    }
+
+
+    /* PLUS ICON */
+
+    .plus-icon::before,
+    .plus-icon::after {
+      content: "";
+
+      position: absolute;
+
+      background: currentColor;
+
+      border-radius: 5px;
+    }
+
+    .plus-icon::before {
+      width: 16px;
+      height: 2px;
+
+      left: 1px;
+      top: 8px;
+    }
+
+    .plus-icon::after {
+      width: 2px;
+      height: 16px;
+
+      left: 8px;
+      top: 1px;
+    }
+
+
+    /* PROFILE ICON */
+
+    .user-icon::before {
+      content: "";
+
+      position: absolute;
+
+      width: 6px;
+      height: 6px;
+
+      border: 1.5px solid currentColor;
+
+      border-radius: 50%;
+
+      left: 6px;
+      top: 1px;
+    }
+
+    .user-icon::after {
+      content: "";
+
+      position: absolute;
+
+      width: 13px;
+      height: 7px;
+
+      border:
+        1.5px solid currentColor;
+
+      border-bottom: none;
+
+      border-radius: 10px 10px 0 0;
+
+      left: 2px;
+      bottom: 1px;
+    }
+
+
+    /* ACTIVE NAV */
+
+    .nav-item.active {
+      color: #2589f4;
+    }
+
+    .nav-item.active .nav-icon {
+      opacity: 1;
+    }
+
+
+    /* =========================================================
+       SMALL SCREEN
+    ========================================================= */
+
+    @media (max-width: 430px) {
+
+      body {
+        align-items: flex-start;
+        background: #080c10;
+      }
+
+      .app {
+        max-width: 100%;
+        min-height: 100vh;
+
+        border: none;
+
+        box-shadow: none;
+      }
+    }
+
+
+    /* =========================================================
+       DESKTOP PRESENTATION
+    ========================================================= */
+
+    @media (min-width: 700px) {
+
+      .app {
+        border-radius: 24px;
+
+        min-height: 820px;
+      }
+    }
