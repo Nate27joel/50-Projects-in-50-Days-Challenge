@@ -1,0 +1,453 @@
+  /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       PAGE
+    ===================================================== */
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: #020202;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       PRESENTATION SLIDE
+    ===================================================== */
+
+    .slide {
+      width: min(100vw, 1280px);
+
+      aspect-ratio: 16 / 9;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          #020202 0%,
+          #050505 50%,
+          #020202 100%
+        );
+
+      border: 1px solid #333;
+
+      box-shadow:
+        0 0 50px rgba(255,255,255,.04);
+    }
+
+
+    /* =====================================================
+       SUBTLE BACKGROUND LINES
+    ===================================================== */
+
+    .slide::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent 0px,
+          transparent 7px,
+          rgba(255,255,255,.018) 8px
+        );
+
+      pointer-events: none;
+    }
+
+
+    /* =====================================================
+       TOP TITLE
+    ===================================================== */
+
+    .title {
+      position: absolute;
+
+      top: 4.5%;
+
+      left: 0;
+
+      width: 100%;
+
+      text-align: center;
+
+      font-size: clamp(11px, 1.35vw, 22px);
+
+      font-weight: 700;
+
+      letter-spacing: .3px;
+
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       LOGO
+    ===================================================== */
+
+    .logo {
+      position: absolute;
+
+      top: 16%;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 65px;
+      height: 65px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid #aaa;
+
+      border-radius: 50%;
+
+      color: #fff;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 31px;
+
+      box-shadow:
+        0 0 12px rgba(255,255,255,.08);
+    }
+
+    .logo::before {
+      content: "";
+
+      position: absolute;
+
+      width: 50px;
+      height: 50px;
+
+      border: 1px solid #555;
+
+      border-radius: 50%;
+    }
+
+    .logo span {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    /* =====================================================
+       QUESTION AREA
+    ===================================================== */
+
+    .quiz {
+      position: absolute;
+
+      top: 29%;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 100%;
+    }
+
+
+    /* =====================================================
+       QUESTION BOX
+    ===================================================== */
+
+    .question {
+      width: 75%;
+
+      max-width: 900px;
+
+      height: 58px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+
+      color: #fff;
+
+      font-size: clamp(9px, 1vw, 15px);
+
+      font-weight: 700;
+
+      letter-spacing: .2px;
+
+      background: rgba(255,255,255,.015);
+    }
+
+
+    /*
+      Angled ends on question box
+    */
+
+    .question::before,
+    .question::after {
+      content: "";
+
+      position: absolute;
+
+      top: -1px;
+
+      width: 30px;
+
+      height: 58px;
+
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+    }
+
+    .question::before {
+      left: -15px;
+
+      transform:
+        skewX(-35deg);
+
+      border-right: 1px solid #fff;
+    }
+
+    .question::after {
+      right: -15px;
+
+      transform:
+        skewX(35deg);
+
+      border-left: 1px solid #fff;
+    }
+
+
+    /* =====================================================
+       ANSWERS
+    ===================================================== */
+
+    .answers {
+      width: 75%;
+
+      max-width: 900px;
+
+      margin: 14px auto 0;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: 35px;
+
+      row-gap: 12px;
+    }
+
+
+    /* =====================================================
+       ANSWER BUTTON
+    ===================================================== */
+
+    .answer {
+      height: 45px;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+
+      color: #fff;
+
+      font-size: clamp(10px, .9vw, 13px);
+
+      font-weight: 700;
+
+      background:
+        rgba(255,255,255,.012);
+
+      cursor: pointer;
+
+      transition:
+        background .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .answer:hover {
+      background:
+        rgba(255,255,255,.07);
+
+      box-shadow:
+        0 0 18px rgba(255,255,255,.08);
+    }
+
+
+    /* =====================================================
+       ANGLED ANSWER EDGES
+    ===================================================== */
+
+    .answer::before,
+    .answer::after {
+      content: "";
+
+      position: absolute;
+
+      top: -1px;
+
+      width: 22px;
+
+      height: 45px;
+
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+    }
+
+    .answer::before {
+      left: -11px;
+
+      transform: skewX(-32deg);
+
+      border-right: 1px solid #fff;
+    }
+
+    .answer::after {
+      right: -11px;
+
+      transform: skewX(32deg);
+
+      border-left: 1px solid #fff;
+    }
+
+
+    /* =====================================================
+       HORIZONTAL DECORATIVE LINES
+    ===================================================== */
+
+    .line {
+      position: absolute;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 1px;
+
+      background: #444;
+
+      opacity: .8;
+    }
+
+    .line.one {
+      top: 53%;
+    }
+
+    .line.two {
+      top: 78%;
+    }
+
+
+    /* =====================================================
+       BOTTOM DECORATION
+    ===================================================== */
+
+    .bottom-line {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+
+      bottom: 5%;
+
+      height: 1px;
+
+      background: #222;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (max-width: 600px) {
+
+      .logo {
+        width: 45px;
+        height: 45px;
+
+        font-size: 21px;
+
+        top: 15%;
+      }
+
+      .logo::before {
+        width: 34px;
+        height: 34px;
+      }
+
+      .question {
+        height: 42px;
+
+        width: 78%;
+      }
+
+      .question::before,
+      .question::after {
+        height: 42px;
+      }
+
+      .answers {
+        width: 78%;
+
+        gap: 8px 22px;
+      }
+
+      .answer {
+        height: 34px;
+      }
+
+      .answer::before,
+      .answer::after {
+        height: 34px;
+      }
+
+      .title {
+        top: 3%;
+      }
+    }
