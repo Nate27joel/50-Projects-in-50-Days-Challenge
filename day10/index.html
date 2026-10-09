@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       MAIN CONTAINER
+  ====================================================== -->
+
+  <main class="container">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <div>
+
+        <h1>
+          Grade Calculator
+        </h1>
+
+        <p>
+          Calculate your academic performance
+        </p>
+
+      </div>
+
+
+      <div class="status">
+
+        <span class="status-dot"></span>
+
+        Ready
+
+      </div>
+
+    </header>
+
+
+    <!-- =================================================
+         CONTENT
+    ================================================== -->
+
+    <div class="content">
+
+
+      <!-- =================================================
+           SUBJECTS
+      ================================================== -->
+
+      <section class="card">
+
+        <div class="card-title">
+          Course Grades
+        </div>
+
+
+        <!-- TABLE HEADER -->
+
+        <div class="table-header">
+
+          <span>Subject</span>
+
+          <span>Score</span>
+
+          <span>Credit</span>
+
+          <span>Grade</span>
+
+        </div>
+
+
+        <!-- SUBJECT 1 -->
+
+        <div class="subject">
+
+          <div class="subject-name">
+
+            Mathematics
+
+            <span class="subject-code">
+              MTH 101
+            </span>
+
+          </div>
+
+          <input
+            type="number"
+            placeholder="85"
+          >
+
+          <input
+            type="number"
+            placeholder="3"
+          >
+
+          <div class="grade">
+            A
+          </div>
+
+        </div>
+
+
+        <!-- SUBJECT 2 -->
+
+        <div class="subject">
+
+          <div class="subject-name">
+
+            Computer Science
+
+            <span class="subject-code">
+              CSC 101
+            </span>
+
+          </div>
+
+          <input
+            type="number"
+            placeholder="92"
+          >
+
+          <input
+            type="number"
+            placeholder="3"
+          >
+
+          <div class="grade">
+            A
+          </div>
+
+        </div>
+
+
+        <!-- SUBJECT 3 -->
+
+        <div class="subject">
+
+          <div class="subject-name">
+
+            Physics
+
+            <span class="subject-code">
+              PHY 101
+            </span>
+
+          </div>
+
+          <input
+            type="number"
+            placeholder="78"
+          >
+
+          <input
+            type="number"
+            placeholder="3"
+          >
+
+          <div class="grade">
+            B
+          </div>
+
+        </div>
+
+
+        <!-- SUBJECT 4 -->
+
+        <div class="subject">
+
+          <div class="subject-name">
+
+            English
+
+            <span class="subject-code">
+              ENG 101
+            </span>
+
+          </div>
+
+          <input
+            type="number"
+            placeholder="88"
+          >
+
+          <input
+            type="number"
+            placeholder="2"
+          >
+
+          <div class="grade">
+            A
+          </div>
+
+        </div>
+
+
+        <!-- SUBJECT 5 -->
+
+        <div class="subject">
+
+          <div class="subject-name">
+
+            Statistics
+
+            <span class="subject-code">
+              STA 101
+            </span>
+
+          </div>
+
+          <input
+            type="number"
+            placeholder="74"
+          >
+
+          <input
+            type="number"
+            placeholder="3"
+          >
+
+          <div class="grade">
+            B
+          </div>
+
+        </div>
+
+
+        <!-- ADD SUBJECT -->
+
+        <button
+          class="add-button"
+          type="button"
+        >
+          + Add Subject
+        </button>
+
+      </section>
+
+
+      <!-- =================================================
+           GPA SUMMARY
+      ================================================== -->
+
+      <aside class="card gpa-card">
+
+        <div class="gpa-label">
+          Current GPA
+        </div>
+
+        <div class="gpa">
+          3.72
+        </div>
+
+        <div class="out-of">
+          out of 4.00
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-section">
+
+          <div class="progress-header">
+
+            <span>
+              Overall Performance
+            </span>
+
+            <span>
+              93%
+            </span>
+
+          </div>
+
+
+          <div class="progress">
+
+            <div class="progress-bar"></div>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="summary">
+
+          <div class="summary-row">
+
+            <span>
+              Total Courses
+            </span>
+
+            <strong>
+              5
+            </strong>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              Total Credits
+            </span>
+
+            <strong>
+              14
+            </strong>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              Average Score
+            </span>
+
+            <strong>
+              83.4%
+            </strong>
+
+          </div>
+
+
+          <div class="summary-row">
+
+            <span>
+              Letter Grade
+            </span>
+
+            <strong>
+              A
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- CALCULATE -->
+
+        <button
+          class="calculate"
+          type="button"
+        >
+          Calculate Grade
+        </button>
+
+      </aside>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+      Academic Grade Calculator · HTML & CSS
+    </div>
+
+
+  </main>
+
+</body>
+</html>
