@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101b36" />
+  <title> Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home"><span class="brand-mark">🧐</span> skycast</a>
+      <div class="unit-toggle" aria-label="Temperature unit">
+        <button id="celsiusBtn" class="unit active" type="button">°C</button>
+        <button id="fahrenheitBtn" class="unit" type="button">°F</button>
+      </div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+      <h1>Forecast for <span>wherever you are.</span></h1>
+      <p class="subtitle">A little sunshine for planning your day.</p>
+    </section>
+
+    <form class="search-bar" id="searchForm">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="cityInput" type="search" placeholder="Search a city (e.g. Lagos)" aria-label="City name" autocomplete="off" />
+      <button type="submit" class="search-btn">Sear🔎<span>→</span></button>
+      <button type="button" id="locationBtn" class="location-btn" title="Use my location" aria-label="Use my location">◎</button>
+    </form>
+    <p id="status" class="status" role="status">Search for a city to get the latest weather.</p>
+
+    <section id="weatherContent" class="weather-content" hidden>
+      <article class="current-card">
+        <div class="current-top">
+          <div>
+            <p class="card-label">CURRENT WEATHER</p>
+            <h2 id="cityName">Lagos, Nigeria</h2>
+            <p id="currentDate" class="muted"></p>
+          </div>
+          <div class="weather-icon" id="currentIcon" aria-hidden="true">☀️</div>
+        </div>
+        <div class="temperature-row">
+          <div class="temperature"><span id="currentTemp">--</span><sup id="degree">°C</sup></div>
+          <div class="condition-block">
+            <p id="condition">Mostly sunny</p>
+            <p class="feels">Feels like <span id="feelsLike">--°</span></p>
+          </div>
+        </div>
+        <div class="current-details">
+          <div class="detail"><span class="detail-icon">💧</span><div><small>Humidity</small><strong id="humidity">--%</strong></div></div>
+          <div class="detail"><span class="detail-icon">💨</span><div><small>Wind speed</small><strong id="wind">-- km/h</strong></div></div>
+          <div class="detail"><span class="detail-icon">☀️</span><div><small>UV index</small><strong id="uv">--</strong></div></div>
+        </div>
+      </article>
+
+      <section class="forecast-section">
+        <div class="section-heading"><div><p class="card-label">PLAN AHEAD</p><h2>5-day forecast</h2></div><span class="tiny-sun">✦</span></div>
+        <div id="forecastGrid" class="forecast-grid"></div>
+      </section>
+    </section>
+
+    <footer><span class="footer-mark">✦</span> Made for the days ahead <span class="footer-dot">•</span> Weather data by Open-Meteo</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
